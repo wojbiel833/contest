@@ -4,12 +4,12 @@ const photoSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    maxlength: { $lte: 25 },
+    maxlength: 25,
   },
   author: {
     type: String,
     required: true,
-    maxlength: { $lte: 50 },
+    maxlength: 50,
   },
   email: { type: String, required: true },
   src: { type: String, required: true },
