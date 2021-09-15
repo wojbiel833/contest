@@ -48,9 +48,9 @@ exports.add = async (req, res) => {
           .replace(/'/g, "&#039;");
       }
 
-      escape(title);
-      escape(author);
-      escape(email);
+      const titleParsed = escape(title);
+      const authorParsed = escape(author);
+      const emailParsed = escape(email);
 
       if (
         fileExt === "png" ||
@@ -59,9 +59,9 @@ exports.add = async (req, res) => {
         fileExt === "gif"
       ) {
         const newPhoto = new Photo({
-          title,
-          author,
-          email,
+          titleParsed,
+          authorParsed,
+          emailParsed,
           src: fileName,
           votes: 0,
         });
